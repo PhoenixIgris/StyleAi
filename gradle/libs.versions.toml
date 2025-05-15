@@ -37,6 +37,9 @@ jb-navigation-compose = "2.8.0-alpha11"
 kotlinx-serilization-json = "1.7.0"
 kotlinx-datetime = "0.6.0"
 
+# Logging
+napier = "2.7.1"
+
 # Testing
 junit = "4.13.2"
 
@@ -63,6 +66,9 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 # Others
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serilization-json" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+
+# Logging
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 
 # Test
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }

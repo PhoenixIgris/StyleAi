@@ -21,3 +21,4 @@ rootProject.name = "StyleAi"
 include(":android")
 include(":core")
 include(":core:app")
+include(":core:analytics")
