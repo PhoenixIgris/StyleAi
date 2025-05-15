@@ -33,6 +33,8 @@ class MultiplatformLibraryConventionPlugin : Plugin<Project> {
                 implementation(libs.jetbrain.lifecycle.viewmodel)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.kotlinx.serialization.json)
+                implementation(libs.koin.core)
+                implementation(libs.koin.compose)
             }
 
             sourceSets.commonTest.dependencies {
