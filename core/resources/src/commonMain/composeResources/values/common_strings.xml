@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">StyleAi</string>
+
+    <!-- Auth -->
+
+
+
+    <!--Api  Error Messages -->
+    <string name="operation_completed_successfully">Operation completed successfully</string>
+    <string name="you_are_not_authorized_to_perform_this_action">You are not authorized to perform this action</string>
+
+    <!--Api  Messages -->
+
+
+    <!-- Buttons -->
+
+
+    <!-- Instruction  -->
+
+    <!--Others -->
+
+    <!-- Alerts -->
+
+    <!-- Labels -->
+
+</resources>
