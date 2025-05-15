@@ -1,46 +1,57 @@
+import styleai.VariantDimension
+import styleai.VariantDimension.dev
+import styleai.VariantDimension.prod
+
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.styleai.android.application.convention.plugin)
     alias(libs.plugins.compose.compiler)
 }
 
 android {
-    namespace = "com.igris.styleai.android"
-    compileSdk = 35
+    namespace = "styleai"
+
     defaultConfig {
-        applicationId = "com.igris.styleai.android"
-        minSdk = 24
-        targetSdk = 35
+        applicationId = "com.igris.styleai"
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures {
-        compose = true
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
     buildTypes {
-        getByName("release") {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+
+        debug {
             isMinifyEnabled = false
+            isDebuggable = true
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+
+    flavorDimensions.add(VariantDimension.name)
+
+    productFlavors {
+        create(dev) {
+            dimension = VariantDimension.name
+            isDefault = true
+            applicationIdSuffix = ".dev"
+            resValue("string", "app_name", "StyleAi")
+        }
+
+        create(prod) {
+            dimension = VariantDimension.name
+        }
     }
 }
 
 dependencies {
-    implementation(projects.core)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.tooling.preview)
-    implementation(libs.compose.material3)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.activity.compose)
-    debugImplementation(libs.compose.ui.tooling)
+    implementation(projects.core.app)
+
 }

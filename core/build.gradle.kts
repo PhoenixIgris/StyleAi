@@ -1,50 +1,32 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import styleai.namespace
+
 
 plugins {
-    alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.styleai.multiplatform.compose.library.convention.plugin)
+}
+
+val binaryName = "StyleAi"
+
+fun KotlinNativeTarget.configureBinary() {
+    binaries.framework {
+        baseName = binaryName
+        isStatic = true
+
+        binaryOption("bundleId", namespace)
+
+        export(projects.core.app)
+    }
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            compileTaskProvider.configure {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_1_8)
-                }
-            }
-        }
-    }
-    
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "core"
-            isStatic = true
-        }
-    }
+
+    iosArm64().configureBinary()
+    iosSimulatorArm64().configureBinary()
 
     sourceSets {
         commonMain.dependencies {
-            //put your multiplatform dependencies here
+            api(projects.core.app)
         }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
-        }
-    }
-}
-
-android {
-    namespace = "com.igris.styleai"
-    compileSdk = 35
-    defaultConfig {
-        minSdk = 24
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }

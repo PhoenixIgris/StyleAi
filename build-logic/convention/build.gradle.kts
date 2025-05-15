@@ -1,0 +1,83 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.detekt)
+    `kotlin-dsl`
+}
+
+dependencies {
+    compileOnly(libs.plugins.kotlinMultiplatform.toDep())
+    compileOnly(libs.plugins.jetbrainsCompose.toDep())
+    compileOnly(libs.plugins.kotlinAndroid.toDep())
+    compileOnly(libs.plugins.androidApplication.toDep())
+    compileOnly(libs.plugins.androidLibrary.toDep())
+    compileOnly(libs.plugins.ktlint.toDep())
+    compileOnly(libs.plugins.detekt.toDep())
+    compileOnly(libs.plugins.buildkonfig.toDep())
+    compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.buildkonfigCompiler)
+    implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
+}
+
+ktlint {
+    version = rootProject.libs.versions.ktlint.get()
+
+    filter {
+        exclude {
+            it.file.absoluteFile.startsWith(layout.buildDirectory.asFile.get().absolutePath)
+        }
+    }
+}
+
+detekt {
+    config.setFrom(rootProject.files("./../config/detekt/detekt.yml"))
+}
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+    google()
+}
+
+gradlePlugin {
+    plugins {
+        register("modulePlugin") {
+            id = libs.plugins.styleai.module.convention.plugin.get().pluginId
+            implementationClass = "ModuleConventionPlugin"
+        }
+
+        register("multiplatformLibraryPlugin") {
+            id = libs.plugins.styleai.multiplatform.library.convention.plugin.get().pluginId
+            implementationClass = "MultiplatformLibraryConventionPlugin"
+        }
+
+        register("multiplatformComposeLibraryPlugin") {
+            id = libs.plugins.styleai.multiplatform.compose.library.convention.plugin.get().pluginId
+            implementationClass = "MultiplatformComposeLibraryConventionPlugin"
+        }
+
+        register("androidApplication") {
+            id = libs.plugins.styleai.android.application.convention.plugin.get().pluginId
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+
+        register("config") {
+            id = libs.plugins.styleai.config.convention.plugin.get().pluginId
+            implementationClass = "ConfigConventionPlugin"
+        }
+
+    }
+}
+
+
+tasks.withType<KotlinCompile> {
+    compilerOptions {
+        freeCompilerArgs.addAll(
+            "-Xcontext-receivers",
+        )
+    }
+}
+
+fun Provider<PluginDependency>.toDep() = map {
+    "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version}"
+}
