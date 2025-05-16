@@ -7,9 +7,7 @@ android-targetSdk = "35"
 
 # Core Plugins
 agp = "8.9.0"
-kotlin = "2.0.0"
-compose = "1.6.10"
-compose-material3 = "1.1.2"
+kotlin = "2.1.0"
 androidx-activityCompose = "1.8.0"
 compose-plugin = "1.7.1"
 jetbrainsKotlinJvm = "1.9.22"
@@ -45,6 +43,10 @@ ktor = "3.0.0-wasm2"
 chucker = "3.5.2"
 result = "5.6.0"
 uuid = "0.0.25"
+
+# Database
+room = "2.7.0-alpha12"
+sqlite = "2.5.0-alpha12"
 
 # Compose
 lottie = "6.0.0"
@@ -102,6 +104,13 @@ chucker-noOp = { module = "com.github.chuckerteam.chucker:library-no-op", versio
 result = { module = "com.github.kittinunf.result:result", version.ref = "result" }
 uuid = { module = "app.softwork:kotlinx-uuid-core", version.ref = "uuid" }
 
+# Database
+room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+
 # Compose
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
@@ -127,6 +136,7 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }
 
 
 # Generate BuildConfig object00
@@ -146,5 +156,6 @@ styleai-config-convention-plugin = { id = "styleai.config.convention.plugin" }
 styleai-module-convention-plugin = { id = "styleai.module.convention.plugin" }
 styleai-multiplatform-compose-library-convention-plugin = { id = "styleai.multiplatform.compose.library.convention.plugin" }
 styleai-multiplatform-library-convention-plugin = { id = "styleai.multiplatform.library.convention.plugin" }
+styleai-android-room-convention-plugin = { id = "styleai.android.room.convention.plugin" }
 
 

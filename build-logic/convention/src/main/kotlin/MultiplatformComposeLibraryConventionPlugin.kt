@@ -26,7 +26,7 @@ class MultiplatformComposeLibraryConventionPlugin : Plugin<Project> {
         }
 
         configure<KotlinMultiplatformExtension> {
-            val extension = extensions.getByType<ComposeExtension>().dependencies
+            val extension = (extensions.getByName("compose") as ComposePlugin.Dependencies)
 
             sourceSets.commonMain.dependencies {
                 implementation(extension.material3)

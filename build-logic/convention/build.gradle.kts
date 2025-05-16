@@ -16,6 +16,7 @@ dependencies {
     compileOnly(libs.plugins.detekt.toDep())
     compileOnly(libs.plugins.buildkonfig.toDep())
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.room.gradlePlugin)
     compileOnly(libs.buildkonfigCompiler)
     implementation(files(libs.javaClass.superclass.protectionDomain.codeSource.location))
 }
@@ -65,7 +66,10 @@ gradlePlugin {
             id = libs.plugins.styleai.config.convention.plugin.get().pluginId
             implementationClass = "ConfigConventionPlugin"
         }
-
+        register("androidRoom") {
+            id = libs.plugins.styleai.android.room.convention.plugin.get().pluginId
+            implementationClass = "AndroidRoomConventionPlugin"
+        }
     }
 }
 
