@@ -3,6 +3,9 @@ package styleai.core.designSystem.theme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.compositionLocalOf
+import styleai.core.designSystem.theme.componentColors.AppBarColors
+import styleai.core.designSystem.theme.componentColors.ButtonColors
+import styleai.core.designSystem.theme.componentColors.InputColors
 
 
 internal val LocalStyleAiColors = compositionLocalOf<StyleAiColors> {
@@ -46,4 +49,9 @@ object StyleAiTheme {
 
     val shapes = Shapes
 
+    val buttonColors = ButtonColors
+
+    val appBarColors = AppBarColors
+
+    val inputColors = InputColors
 }
