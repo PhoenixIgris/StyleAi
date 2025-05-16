@@ -1,0 +1,10 @@
+package styleai.core.app.navigation
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+sealed class AppNavigation(val route: String) {
+    @Serializable
+    data object MainHomePage : AppNavigation("main_home")
+}
+
