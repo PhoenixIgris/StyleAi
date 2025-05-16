@@ -36,6 +36,10 @@ jb-navigation-compose = "2.8.0-alpha11"
 # Dependency injection
 koin = "4.0.0-RC1"
 
+# DataStore
+multiplatformSettings = "1.1.1"
+context-provider = "0.2.2"
+
 # Compose
 lottie = "6.0.0"
 
@@ -72,6 +76,9 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 # For koinViewModel or viewModel  dependency injection
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 
+# DataStore
+multiplatformSettings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatformSettings" }
+contextProvider = { module = "me.sujanpoudel.multiplatform.utils:context-provider", version.ref = "context-provider" }
 # Compose
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
