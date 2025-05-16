@@ -157,5 +157,6 @@ styleai-module-convention-plugin = { id = "styleai.module.convention.plugin" }
 styleai-multiplatform-compose-library-convention-plugin = { id = "styleai.multiplatform.compose.library.convention.plugin" }
 styleai-multiplatform-library-convention-plugin = { id = "styleai.multiplatform.library.convention.plugin" }
 styleai-android-room-convention-plugin = { id = "styleai.android.room.convention.plugin" }
+styleai-feature-convention-plugin = { id = "styleai.feature.convention.plugin" }
 
 

@@ -70,6 +70,10 @@ gradlePlugin {
             id = libs.plugins.styleai.android.room.convention.plugin.get().pluginId
             implementationClass = "AndroidRoomConventionPlugin"
         }
+        register("feature") {
+            id = libs.plugins.styleai.feature.convention.plugin.get().pluginId
+            implementationClass = "FeatureConventionPlugin"
+        }
     }
 }
 
