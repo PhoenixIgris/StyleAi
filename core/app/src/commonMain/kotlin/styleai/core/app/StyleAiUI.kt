@@ -5,10 +5,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import styleai.core.designSystem.theme.StyleAiTheme
 
 @Composable
 fun StyleAiUI() {
-    Box(Modifier.fillMaxSize()) {
-        Text("Hello StyleAi")
+    StyleAiTheme {
+        Box(Modifier.fillMaxSize()) {
+            Text("Hello StyleAi")
+        }
     }
+
 }

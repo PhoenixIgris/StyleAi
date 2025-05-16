@@ -16,6 +16,7 @@ fun KotlinNativeTarget.configureBinary() {
         binaryOption("bundleId", namespace)
 
         export(projects.core.app)
+        export(projects.core.ui)
     }
 }
 
