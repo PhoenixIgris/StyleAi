@@ -15,6 +15,7 @@ class DataStore(
 ) {
     var accessToken by deviceStore.value<String>(ACCESS_TOKEN)
     var refreshToken by deviceStore.value<String>(REFRESH_TOKEN)
+    var isLoggedIn by deviceStore.value<Boolean?>(IS_LOGGED_IN, defaultValue = false)
 
     fun clearUserData() {
         userStore.clear()
@@ -37,6 +38,7 @@ class DataStore(
     companion object {
         private const val ACCESS_TOKEN = "access_token"
         private const val REFRESH_TOKEN = "refresh_token"
+        const val IS_LOGGED_IN = "isLoggedIn"
 
     }
 }

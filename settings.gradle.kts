@@ -6,6 +6,7 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
 
@@ -14,6 +15,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
 
@@ -28,3 +30,4 @@ include(":core:designSystem")
 include(":core:ui")
 include(":core:datastore")
 include(":core:models")
+include(":core:network")
