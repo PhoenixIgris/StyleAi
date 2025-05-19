@@ -54,6 +54,7 @@ lottie = "6.0.0"
 # Others
 kotlinx-serilization-json = "1.7.0"
 kotlinx-datetime = "0.6.0"
+accompanist-permissions = "0.37.0"
 
 # Logging
 napier = "2.7.1"
@@ -118,6 +119,7 @@ lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", versio
 # Others
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serilization-json" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinx-datetime" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist-permissions" }
 
 # Logging
 napier = { module = "io.github.aakira:napier", version.ref = "napier" }

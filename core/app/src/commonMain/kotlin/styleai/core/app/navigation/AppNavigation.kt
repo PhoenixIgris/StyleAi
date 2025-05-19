@@ -6,5 +6,8 @@ import kotlinx.serialization.Serializable
 sealed class AppNavigation(val route: String) {
     @Serializable
     data object MainHomePage : AppNavigation("main_home")
+
+    @Serializable
+    data object CameraPage : AppNavigation("camera")
 }
 

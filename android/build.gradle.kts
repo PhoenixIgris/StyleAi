@@ -1,7 +1,3 @@
-import styleai.VariantDimension
-import styleai.VariantDimension.dev
-import styleai.VariantDimension.prod
-
 plugins {
     alias(libs.plugins.styleai.android.application.convention.plugin)
     alias(libs.plugins.compose.compiler)
@@ -32,20 +28,20 @@ android {
         }
     }
 
-    flavorDimensions.add(VariantDimension.name)
-
-    productFlavors {
-        create(dev) {
-            dimension = VariantDimension.name
-            isDefault = true
-            applicationIdSuffix = ".dev"
-            resValue("string", "app_name", "StyleAi")
-        }
-
-        create(prod) {
-            dimension = VariantDimension.name
-        }
-    }
+//    flavorDimensions.add(VariantDimension.name)
+//
+//    productFlavors {
+//        create(dev) {
+//            dimension = VariantDimension.name
+//            isDefault = true
+//            applicationIdSuffix = ".dev"
+//            resValue("string", "app_name", "StyleAi")
+//        }
+//
+//        create(prod) {
+//            dimension = VariantDimension.name
+//        }
+//    }
 }
 
 dependencies {

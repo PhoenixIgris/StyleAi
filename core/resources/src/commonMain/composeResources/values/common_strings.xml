@@ -5,7 +5,6 @@
     <!-- Auth -->
 
 
-
     <!--Api  Error Messages -->
     <string name="operation_completed_successfully">Operation completed successfully</string>
     <string name="you_are_not_authorized_to_perform_this_action">You are not authorized to perform this action</string>
@@ -23,5 +22,6 @@
     <!-- Alerts -->
 
     <!-- Labels -->
-
+    <string name="cancel">Cancel</string>
+    <string name="proceed">Proceed</string>
 </resources>

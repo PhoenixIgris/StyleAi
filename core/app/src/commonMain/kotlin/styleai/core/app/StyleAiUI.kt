@@ -11,6 +11,7 @@ import org.koin.compose.koinInject
 import styleai.core.app.navigation.AppNavigation
 import styleai.core.designSystem.theme.StyleAiTheme
 import styleai.core.ui.components.toast.ToastHost
+import styleai.features.camera.CameraScreen
 import styleai.features.main.MainHomeContainerScreen
 
 @Composable
@@ -21,12 +22,16 @@ fun StyleAiUI() {
             ToastHost {
                 NavHost(
                     navController = navigator,
-                    startDestination = AppNavigation.MainHomePage,
+                    startDestination = AppNavigation.CameraPage,
                     modifier = Modifier.fillMaxSize()
                 ) {
 
                     composable<AppNavigation.MainHomePage> {
                         MainHomeContainerScreen(koinInject())
+                    }
+
+                    composable<AppNavigation.CameraPage> {
+                        CameraScreen(koinInject())
                     }
                 }
             }

@@ -1,0 +1,4 @@
+<resources>
+    <string name="permission_denied">Permission denied</string>
+    <string name="please_grant_this_permission">Please grant this permission. You can manage permissions in your device settings.</string>
+</resources>
