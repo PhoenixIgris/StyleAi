@@ -22,9 +22,15 @@ struct iOSApp: App {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 view.play()
             })
-
+         
             return view;
         }
+        SvgDataListProvider.shared.provideSvgData = { content in
+            let result =  parseSVGFile(named: content)
+            return result
+        }
+     
+        
     }
 
     var body: some Scene {

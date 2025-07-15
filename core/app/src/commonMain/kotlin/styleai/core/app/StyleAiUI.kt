@@ -12,6 +12,7 @@ import styleai.core.app.navigation.AppNavigation
 import styleai.core.designSystem.theme.StyleAiTheme
 import styleai.core.ui.components.toast.ToastHost
 import styleai.features.camera.CameraScreen
+import styleai.features.interactive_svg.InteractiveScreen
 import styleai.features.main.MainHomeContainerScreen
 
 @Composable
@@ -22,14 +23,16 @@ fun StyleAiUI() {
             ToastHost {
                 NavHost(
                     navController = navigator,
-                    startDestination = AppNavigation.CameraPage,
+                    startDestination = AppNavigation.InteractiveSvgPage,
                     modifier = Modifier.fillMaxSize()
                 ) {
 
                     composable<AppNavigation.MainHomePage> {
                         MainHomeContainerScreen(koinInject())
                     }
-
+                    composable<AppNavigation.InteractiveSvgPage> {
+                        InteractiveScreen()
+                    }
                     composable<AppNavigation.CameraPage> {
                         CameraScreen(koinInject())
                     }

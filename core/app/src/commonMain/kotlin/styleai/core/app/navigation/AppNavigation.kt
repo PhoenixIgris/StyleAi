@@ -9,5 +9,8 @@ sealed class AppNavigation(val route: String) {
 
     @Serializable
     data object CameraPage : AppNavigation("camera")
+
+    @Serializable
+    data object InteractiveSvgPage : AppNavigation("InteractiveSvgPage")
 }
 
