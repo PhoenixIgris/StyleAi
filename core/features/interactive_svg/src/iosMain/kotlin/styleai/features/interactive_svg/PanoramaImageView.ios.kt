@@ -4,6 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-expect fun PanoramaImageView(
-    modifier: Modifier = Modifier
-)
+actual fun PanoramaImageView(modifier: Modifier) {
+    TODO("Not yet implemented")
+}

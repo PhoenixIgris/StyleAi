@@ -3,7 +3,7 @@ import StyleAi
 
 struct ComposeView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIViewController {
-        MainViewControllerKt.MainViewController()
+        PanoramaViewController()
     }
 
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
