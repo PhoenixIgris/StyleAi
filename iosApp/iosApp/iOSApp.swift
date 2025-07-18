@@ -29,8 +29,9 @@ struct iOSApp: App {
             let result =  parseSVGFile(named: content)
             return result
         }
-     
-        
+        PanoramaImageProvider.shared.providePanoramaImage = {
+            return WebViewController()
+        }
     }
 
     var body: some Scene {

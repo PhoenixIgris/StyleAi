@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 		CF1D628F2E1BCA8F0022694E /* Macaw in Frameworks */ = {isa = PBXBuildFile; productRef = CF1D628E2E1BCA8F0022694E /* Macaw */; };
 		CF1D62942E1BCAB00022694E /* SvgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D62932E1BCAAC0022694E /* SvgHelper.swift */; };
-		CF3B0D172E2773D700A5BFEF /* PanoramaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B0D162E2773D700A5BFEF /* PanoramaViewController.swift */; };
 		CF7D9CB82E26366A004D4567 /* seatsvg.svg in Resources */ = {isa = PBXBuildFile; fileRef = CF7D9CB62E26364B004D4567 /* seatsvg.svg */; };
 		CFC31AB82DD6E10600B18BB6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CFC31AB72DD6E10600B18BB6 /* Lottie */; };
 /* End PBXBuildFile section */
@@ -39,9 +38,13 @@
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF1D62932E1BCAAC0022694E /* SvgHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SvgHelper.swift; sourceTree = "<group>"; };
-		CF3B0D162E2773D700A5BFEF /* PanoramaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanoramaViewController.swift; sourceTree = "<group>"; };
 		CF7D9CB62E26364B004D4567 /* seatsvg.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = seatsvg.svg; path = iosApp/Assets.xcassets/seatsvg.imageset/seatsvg.svg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CFFCE4772E2A235400DA12CA /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		CFFCE47C2E2A235A00DA12CA /* webview */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = webview; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7555FF78242A565900829871 /* Frameworks */ = {
@@ -85,6 +88,8 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				CFFCE47C2E2A235A00DA12CA /* webview */,
+				CFFCE4772E2A235400DA12CA /* Resources */,
 				CF1D62902E1BCA9A0022694E /* Helpers */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
@@ -105,7 +110,6 @@
 		CF1D62902E1BCA9A0022694E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				CF3B0D162E2773D700A5BFEF /* PanoramaViewController.swift */,
 				CF1D62932E1BCAAC0022694E /* SvgHelper.swift */,
 			);
 			path = Helpers;
@@ -127,6 +131,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CFFCE4772E2A235400DA12CA /* Resources */,
+				CFFCE47C2E2A235A00DA12CA /* webview */,
 			);
 			name = iosApp;
 			productName = iosApp;
@@ -209,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
-				CF3B0D172E2773D700A5BFEF /* PanoramaViewController.swift in Sources */,
 				CF1D62942E1BCAB00022694E /* SvgHelper.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 			);
