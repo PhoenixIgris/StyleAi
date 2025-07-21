@@ -11,7 +11,6 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
-		CF1D628F2E1BCA8F0022694E /* Macaw in Frameworks */ = {isa = PBXBuildFile; productRef = CF1D628E2E1BCA8F0022694E /* Macaw */; };
 		CF1D62942E1BCAB00022694E /* SvgHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1D62932E1BCAAC0022694E /* SvgHelper.swift */; };
 		CF7D9CB82E26366A004D4567 /* seatsvg.svg in Resources */ = {isa = PBXBuildFile; fileRef = CF7D9CB62E26364B004D4567 /* seatsvg.svg */; };
 		CFC31AB82DD6E10600B18BB6 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CFC31AB72DD6E10600B18BB6 /* Lottie */; };
@@ -51,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1D628F2E1BCA8F0022694E /* Macaw in Frameworks */,
 				CFC31AB82DD6E10600B18BB6 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,7 +165,6 @@
 			mainGroup = 7555FF72242A565900829871;
 			packageReferences = (
 				CFC31AB62DD6E10600B18BB6 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				CF1D628D2E1BCA8F0022694E /* XCRemoteSwiftPackageReference "Macaw" */,
 			);
 			productRefGroup = 7555FF7C242A565900829871 /* Products */;
 			projectDirPath = "";
@@ -417,14 +414,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CF1D628D2E1BCA8F0022694E /* XCRemoteSwiftPackageReference "Macaw" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/Macaw";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.10;
-			};
-		};
 		CFC31AB62DD6E10600B18BB6 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -436,11 +425,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CF1D628E2E1BCA8F0022694E /* Macaw */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CF1D628D2E1BCA8F0022694E /* XCRemoteSwiftPackageReference "Macaw" */;
-			productName = Macaw;
-		};
 		CFC31AB72DD6E10600B18BB6 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CFC31AB62DD6E10600B18BB6 /* XCRemoteSwiftPackageReference "lottie-spm" */;
