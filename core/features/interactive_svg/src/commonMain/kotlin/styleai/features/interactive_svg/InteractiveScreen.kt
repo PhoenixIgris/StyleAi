@@ -14,6 +14,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import styleai.core.common.inject
+import kotlin.getValue
 
 private const val TAG = "InteractiveScreen"
 
@@ -39,6 +41,7 @@ fun InteractiveScreen(
         ) {
             Text(text = "Panorama Interaction")
         }
+//        val stadiumRepository by inject<Sta>()
         if (isPanorama) {
             PanoramaImageView(modifier = Modifier.fillMaxSize())
         } else {

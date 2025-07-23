@@ -11,6 +11,8 @@ kotlin {
         commonMain.dependencies {
             implementation(projects.core.common)
             implementation(projects.core.models)
+            implementation(libs.kotlinx.serialization.json)
+
         }
         androidMain.dependencies {
             implementation(libs.koin.android)

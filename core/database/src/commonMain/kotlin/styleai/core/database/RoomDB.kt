@@ -5,20 +5,24 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.RoomDatabaseConstructor
 import styleai.core.database.DatabaseConfig.DATABASE_VERSION
+import styleai.core.database.dao.StadiumDao
 import styleai.core.database.dao.StyleDao
+import styleai.core.database.model.StadiumEntity
 import styleai.core.database.model.StyleEntity
 
 
 @Database(
     entities = [
-        StyleEntity::class
+        StyleEntity::class,
+        StadiumEntity::class
     ],
     version = DATABASE_VERSION,
-    exportSchema = true
+    exportSchema = false
 )
 @ConstructedBy(AppDatabaseConstructor::class)
 abstract class RoomDB : RoomDatabase() {
     abstract fun testDao(): StyleDao
+    abstract fun stadiumDao(): StadiumDao
 }
 
 @Suppress("NO_ACTUAL_FOR_EXPECT")
