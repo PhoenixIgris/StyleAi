@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import kotlinx.coroutines.flow.Flow
-import styleai.core.database.model.StadiumEntity
+import styleai.core.models.local.StadiumEntity
 
 @Dao
 interface StadiumDao {

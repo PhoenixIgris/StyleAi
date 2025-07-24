@@ -12,7 +12,7 @@ import styleai.core.common.manager.FileManager
 import styleai.core.data.utils.toDomain
 import styleai.core.data.utils.toResult
 import styleai.core.database.dao.StadiumDao
-import styleai.core.database.model.StadiumEntity
+import styleai.core.models.local.StadiumEntity
 import styleai.core.models.ApiCallFailure
 import styleai.core.network.StyleAiRemoteApi
 
@@ -82,7 +82,7 @@ class StadiumRepository(
     }
 
 
-    private suspend fun refreshStadiumData(): com.github.kittinunf.result.Result<List<StadiumEntity>, ApiCallFailure> {
+     suspend fun refreshStadiumData(): com.github.kittinunf.result.Result<List<StadiumEntity>, ApiCallFailure> {
         return apiInterface.getStadiumData().toResult().map {
             listOf<StadiumEntity>((it ?: "NO DATA").toDomain())
         }

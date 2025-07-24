@@ -31,7 +31,7 @@ fun StyleAiUI() {
                         MainHomeContainerScreen(koinInject())
                     }
                     composable<AppNavigation.InteractiveSvgPage> {
-                        InteractiveScreen()
+                        InteractiveScreen(koinInject())
                     }
                     composable<AppNavigation.CameraPage> {
                         CameraScreen(koinInject())

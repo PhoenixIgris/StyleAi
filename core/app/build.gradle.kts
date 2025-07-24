@@ -9,6 +9,7 @@ kotlin {
         implementation(projects.core.analytics)
         implementation(projects.core.designSystem)
         implementation(projects.core.ui)
+        implementation(projects.core.data)
         implementation(projects.core.features.main)
         implementation(projects.core.features.interactiveSvg)
         api(projects.core.features.camera)

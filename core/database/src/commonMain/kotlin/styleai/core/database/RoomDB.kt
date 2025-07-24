@@ -7,8 +7,8 @@ import androidx.room.RoomDatabaseConstructor
 import styleai.core.database.DatabaseConfig.DATABASE_VERSION
 import styleai.core.database.dao.StadiumDao
 import styleai.core.database.dao.StyleDao
-import styleai.core.database.model.StadiumEntity
-import styleai.core.database.model.StyleEntity
+import styleai.core.models.local.StadiumEntity
+import styleai.core.models.local.StyleEntity
 
 
 @Database(

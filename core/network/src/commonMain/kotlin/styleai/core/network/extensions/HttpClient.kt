@@ -73,6 +73,19 @@ internal suspend inline fun <reified Response> HttpClient.get(
     block = block,
 )
 
+internal suspend inline fun <reified Response> HttpClient.getImage(
+    path: String,
+    params: Map<String, Any?> = emptyMap(),
+    crossinline block: HttpRequestBuilder.() -> Unit = {},
+) = request<Response>(
+    path = path,
+    httpMethod = HttpMethod.Get,
+    body = EmptyContent,
+    queryMap = params,
+    block = block,
+    requestContentType = ContentType.Image.JPEG
+)
+
 internal suspend inline fun <reified Response : Any> HttpClient.post(
     path: String,
     body: Any? = EmptyContent,

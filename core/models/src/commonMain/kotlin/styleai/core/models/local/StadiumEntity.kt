@@ -1,4 +1,4 @@
-package styleai.core.database.model
+package styleai.core.models.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
