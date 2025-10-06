@@ -6,6 +6,7 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://developer.huawei.com/repo/") }
         maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
@@ -15,6 +16,8 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
+        maven { url = uri("https://developer.huawei.com/repo/") }
+
         maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
 }
@@ -34,3 +37,4 @@ include(":core:network")
 include(":core:database")
 include(":core:features:main")
 include(":core:features:camera")
+include(":core:features:interactive_svg")

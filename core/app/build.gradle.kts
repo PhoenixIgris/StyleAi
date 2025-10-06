@@ -10,6 +10,7 @@ kotlin {
         implementation(projects.core.designSystem)
         implementation(projects.core.ui)
         implementation(projects.core.features.main)
+        implementation(projects.core.features.interactiveSvg)
         api(projects.core.features.camera)
         implementation(libs.jetbrain.navigation.compose)
     }

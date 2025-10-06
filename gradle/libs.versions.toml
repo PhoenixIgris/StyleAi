@@ -41,6 +41,7 @@ context-provider = "0.2.2"
 # Network
 ktor = "3.0.0-wasm2"
 chucker = "3.5.2"
+panorama = "4.0.4.301"
 result = "5.6.0"
 uuid = "0.0.25"
 
@@ -64,6 +65,9 @@ junit = "4.13.2"
 
 # Code Improvements
 ktlint = "1.2.1"
+material = "1.12.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
 
 [libraries]
 # Core
@@ -102,6 +106,7 @@ ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "kto
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
 chucker = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
 chucker-noOp = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+panorama = { module = "com.huawei.hms:panorama", version.ref = "panorama" }
 result = { module = "com.github.kittinunf.result:result", version.ref = "result" }
 uuid = { module = "app.softwork:kotlinx-uuid-core", version.ref = "uuid" }
 
@@ -127,6 +132,9 @@ napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 # Test
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
 # Core Plugins
