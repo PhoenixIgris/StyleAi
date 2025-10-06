@@ -12,5 +12,8 @@ sealed class AppNavigation(val route: String) {
 
     @Serializable
     data object InteractiveSvgPage : AppNavigation("InteractiveSvgPage")
+
+    @Serializable
+    data object PanoramaViewPage : AppNavigation("PanoramaViewPage")
 }
 
