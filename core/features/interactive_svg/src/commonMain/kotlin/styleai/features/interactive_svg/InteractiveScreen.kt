@@ -5,10 +5,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,7 +19,10 @@ private const val TAG = "InteractiveScreen"
 
 @Composable
 fun InteractiveScreen(
+    viewModel: InteractiveScreenViewModel
 ) {
+    val state by viewModel.state.collectAsState()
+    val imageList by viewModel.imageList.collectAsState()
     var isPanorama by remember { mutableStateOf(false) }
     Column {
         Button(
@@ -39,10 +42,11 @@ fun InteractiveScreen(
         ) {
             Text(text = "Panorama Interaction")
         }
+
         if (isPanorama) {
             PanoramaImageView(modifier = Modifier.fillMaxSize())
         } else {
-            SvgInteractionView()
+            SvgInteractionView(imageList?.firstOrNull())
         }
     }
 }

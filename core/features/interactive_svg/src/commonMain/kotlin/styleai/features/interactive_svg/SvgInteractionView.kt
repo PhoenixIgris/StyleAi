@@ -2,7 +2,6 @@ package styleai.features.interactive_svg
 
 import SVGData
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -21,11 +20,10 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.vector.PathParser
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
-import org.jetbrains.compose.resources.painterResource
-import styleai.core.features.interactive_svg.generated.resources.seat
+import panda.core.components.coil.LazyImage
 
 @Composable
-fun SvgInteractionView (){
+fun SvgInteractionView(image: String?) {
     val selectablePaths = parsePathsFromVectorDrawable()
     var selectedSeatName by remember { mutableStateOf("") }
     var selectedSeat by remember { mutableStateOf<List<SVGData>>(emptyList()) }
@@ -38,13 +36,8 @@ fun SvgInteractionView (){
                 .fillMaxSize()
         ) {
 
-            Image(
-                painter = painterResource(styleai.core.features.interactive_svg.generated.resources.Res.drawable.seat),
-                contentDescription = "",
-                modifier = Modifier.wrapContentSize()
-            )
 
-
+            LazyImage(image, modifier = Modifier.wrapContentSize())
 
             Canvas(
                 modifier = Modifier
