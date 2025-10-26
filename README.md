@@ -103,7 +103,7 @@ These ensure:
 ### Clone & Run
 ```bash
 # Clone the repository
-git clone [https://github.com/yourusername/StyleAi.git](https://github.com/PhoenixIgris/StyleAi.git
+git clone https://github.com/PhoenixIgris/StyleAi.git
 cd StyleAi
 
 # Open in Android Studio or IntelliJ IDEA
