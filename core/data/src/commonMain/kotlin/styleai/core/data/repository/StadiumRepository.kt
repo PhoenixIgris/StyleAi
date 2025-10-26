@@ -12,7 +12,7 @@ import styleai.core.common.manager.FileManager
 import styleai.core.data.utils.toDomain
 import styleai.core.data.utils.toResult
 import styleai.core.database.dao.StadiumDao
-import styleai.core.models.local.StadiumEntity
+import styleai.core.database.local.StadiumEntity
 import styleai.core.models.ApiCallFailure
 import styleai.core.network.StyleAiRemoteApi
 

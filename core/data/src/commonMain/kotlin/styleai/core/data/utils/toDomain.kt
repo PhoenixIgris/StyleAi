@@ -1,6 +1,6 @@
 package styleai.core.data.utils
 
-import styleai.core.models.local.StadiumEntity
+import styleai.core.database.local.StadiumEntity
 
 fun String.toDomain(): StadiumEntity {
     return StadiumEntity(

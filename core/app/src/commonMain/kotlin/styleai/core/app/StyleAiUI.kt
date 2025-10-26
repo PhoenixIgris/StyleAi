@@ -76,7 +76,7 @@ fun StyleAiUI() {
                             MainHomeContainerScreen(koinInject())
                         }
                         composable<AppNavigation.InteractiveSvgPage> {
-                            SvgInteractionView()
+                            SvgInteractionView("https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80")
                         }
 
                         composable<AppNavigation.PanoramaViewPage> {

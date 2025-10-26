@@ -7,7 +7,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-import styleai.core.models.local.StyleEntity
+import styleai.core.database.local.StyleEntity
 
 @Dao
 interface StyleDao {
