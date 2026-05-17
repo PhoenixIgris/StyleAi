@@ -1,10 +1,15 @@
 # StyleAI Asset Usage
 
-The StyleAI SVG package is integrated through Compose Multiplatform resources in:
+The StyleAI asset package is integrated through Compose Multiplatform resources in:
 
 `src/commonMain/composeResources/drawable`
 
 Use assets directly with `Res.drawable.<name>` or through `styleai.core.resources.StyleAiAssets`.
+The root drawable assets are Android-safe resources: simple existing XML vectors remain XML, and StyleAI package art is stored as WebP. Do not load `.svg` files with `painterResource()` on Android.
+
+The original SVG source package is kept outside Compose resources at:
+
+`styleai_vector_assets_source`
 
 ## Welcome Screen
 
