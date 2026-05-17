@@ -101,9 +101,17 @@ class StyleAiViewModel(
     fun goToReview() {
         updateState {
             if (questionnaireAnswers.isComplete) {
-                copy(screen = StyleAiScreen.Review)
+                copy(
+                    screen = StyleAiScreen.Review,
+                    loading = false,
+                    error = null,
+                )
             } else {
-                copy(screen = StyleAiScreen.Questionnaire)
+                copy(
+                    screen = StyleAiScreen.Questionnaire,
+                    loading = false,
+                    error = null,
+                )
             }
         }
     }
