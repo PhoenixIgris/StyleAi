@@ -2,7 +2,9 @@ package styleai.core.data.di
 
 import org.koin.core.module.Module
 import org.koin.dsl.module
+import styleai.core.data.repository.FakeStyleRepository
 import styleai.core.data.repository.StadiumRepository
+import styleai.core.data.repository.StyleRepository
 import styleai.core.database.dao.StadiumDao
 import styleai.core.database.di.databaseModule
 import styleai.core.datastore.di.dataStoreModule
@@ -21,6 +23,8 @@ fun dataModule(): Module = module {
             get<StyleAiRemoteApi>()
         )
     }
+    single<StyleRepository> {
+        FakeStyleRepository()
+    }
 }
-
 
