@@ -6,3 +6,4 @@ import styleai.core.models.Response
 
 
 typealias ApiResult<T> = Result<Response<T>, ApiCallFailure>
+typealias RawApiResult<T> = Result<T, ApiCallFailure>

@@ -25,12 +25,12 @@ import styleai.core.designSystem.elements.StyleAiResultCard
 import styleai.core.designSystem.elements.StyleAiScreenContainer
 import styleai.core.designSystem.elements.StyleAiSecondaryButton
 import styleai.core.designSystem.theme.StyleAiTheme
-import styleai.core.models.style.StyleRecommendation
+import styleai.core.models.style.StyleResponse
 import styleai.core.resources.StyleAiAssets
 
 @Composable
 fun ResultScreen(
-    recommendation: StyleRecommendation,
+    recommendation: StyleResponse,
     onEditAnswers: () -> Unit,
     onGenerateAgain: () -> Unit,
     modifier: Modifier = Modifier,

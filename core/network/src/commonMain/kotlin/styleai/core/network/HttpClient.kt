@@ -52,6 +52,8 @@ internal fun buildNoAuthHttpClient(
 
     installLogging()
 
+    installJsonContentNegotiation()
+
     installWebSockets()
 
     installTimeout()

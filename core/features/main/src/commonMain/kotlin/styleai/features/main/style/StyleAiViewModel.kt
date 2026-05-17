@@ -7,16 +7,24 @@ import styleai.core.data.repository.StyleRepository
 import styleai.core.models.style.StyleQuestion
 import styleai.core.models.style.StyleQuestionnaireState
 import styleai.core.models.style.StyleQuestions
-import styleai.core.models.style.StyleRecommendation
+import styleai.core.models.style.StyleResponse
 import styleai.core.ui.delegates.StateManager
 import styleai.core.ui.delegates.ViewModelStateManager
+
+enum class StyleGenerationState {
+    Idle,
+    Loading,
+    Success,
+    Error,
+}
 
 data class StyleAiViewState(
     val screen: StyleAiScreen = StyleAiScreen.Welcome,
     val questions: List<StyleQuestion> = StyleQuestions.all,
     val questionnaireAnswers: StyleQuestionnaireState = StyleQuestionnaireState(),
     val loading: Boolean = false,
-    val result: StyleRecommendation? = null,
+    val generationState: StyleGenerationState = StyleGenerationState.Idle,
+    val result: StyleResponse? = null,
     val error: String? = null,
 ) {
     val currentQuestionIndex: Int = questionnaireAnswers.currentQuestionIndex
@@ -39,6 +47,7 @@ class StyleAiViewModel(
                 screen = StyleAiScreen.Questionnaire,
                 questionnaireAnswers = StyleQuestionnaireState(),
                 loading = false,
+                generationState = StyleGenerationState.Idle,
                 result = null,
                 error = null,
             )
@@ -104,12 +113,14 @@ class StyleAiViewModel(
                 copy(
                     screen = StyleAiScreen.Review,
                     loading = false,
+                    generationState = StyleGenerationState.Idle,
                     error = null,
                 )
             } else {
                 copy(
                     screen = StyleAiScreen.Questionnaire,
                     loading = false,
+                    generationState = StyleGenerationState.Idle,
                     error = null,
                 )
             }
@@ -122,6 +133,7 @@ class StyleAiViewModel(
                 screen = StyleAiScreen.Questionnaire,
                 error = null,
                 loading = false,
+                generationState = StyleGenerationState.Idle,
             )
         }
     }
@@ -132,6 +144,7 @@ class StyleAiViewModel(
             copy(
                 screen = StyleAiScreen.Loading,
                 loading = true,
+                generationState = StyleGenerationState.Loading,
                 error = null,
             )
         }
@@ -144,6 +157,7 @@ class StyleAiViewModel(
                         copy(
                             screen = StyleAiScreen.Result,
                             loading = false,
+                            generationState = StyleGenerationState.Success,
                             result = recommendation,
                             error = null,
                         )
@@ -152,6 +166,7 @@ class StyleAiViewModel(
                         copy(
                             screen = StyleAiScreen.Error,
                             loading = false,
+                            generationState = StyleGenerationState.Error,
                             error = throwable.message ?: "Unable to generate your style guide.",
                         )
                     },
@@ -169,7 +184,19 @@ class StyleAiViewModel(
             copy(
                 screen = if (result == null) StyleAiScreen.Review else StyleAiScreen.Result,
                 loading = false,
+                generationState = if (result == null) StyleGenerationState.Idle else StyleGenerationState.Success,
                 error = null,
+            )
+        }
+    }
+
+    fun checkBackendHealth(onResult: (String) -> Unit = {}) {
+        viewModelScope.launch {
+            val healthResult = styleRepository.checkBackendHealth()
+            onResult(
+                healthResult.getOrElse { throwable ->
+                    throwable.message ?: "Backend health check failed."
+                },
             )
         }
     }

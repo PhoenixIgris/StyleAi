@@ -1,15 +1,15 @@
 package styleai.core.data.repository
 
 import kotlinx.coroutines.delay
-import styleai.core.models.style.StyleRecommendation
 import styleai.core.models.style.StyleRequest
+import styleai.core.models.style.StyleResponse
 
 class FakeStyleRepository : StyleRepository {
-    override suspend fun generateRecommendation(request: StyleRequest): Result<StyleRecommendation> {
+    override suspend fun generateRecommendation(request: StyleRequest): Result<StyleResponse> {
         delay(1_500)
 
         return Result.success(
-            StyleRecommendation(
+            StyleResponse(
                 summary = buildSummary(request),
                 outfitIdea = buildOutfitIdea(request),
                 colorsToTry = listOf(
@@ -39,6 +39,10 @@ class FakeStyleRepository : StyleRepository {
                 confidenceBoost = "Your best look is the one that feels comfortable, polished, and true to your personality.",
             ),
         )
+    }
+
+    override suspend fun checkBackendHealth(): Result<String> {
+        return Result.success("Fake StyleAI backend is available.")
     }
 
     private fun buildSummary(request: StyleRequest): String {

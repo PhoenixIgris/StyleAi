@@ -14,6 +14,7 @@ import io.ktor.client.request.forms.submitFormWithBinaryData
 import io.ktor.client.request.header
 import io.ktor.client.request.request
 import io.ktor.client.request.setBody
+import io.ktor.client.statement.bodyAsText
 import io.ktor.client.utils.EmptyContent
 import io.ktor.http.ContentType
 import io.ktor.http.ContentType.Application
@@ -60,7 +61,6 @@ internal suspend inline fun <reified Response> HttpClient.request(
     }
 }
 
-
 internal suspend inline fun <reified Response> HttpClient.get(
     path: String,
     params: Map<String, Any?> = emptyMap(),
@@ -98,6 +98,30 @@ internal suspend inline fun <reified Response : Any> HttpClient.post(
     queryMap = params,
     block = block,
 )
+
+internal suspend fun HttpClient.getRawText(
+    path: String,
+    params: Map<String, Any?> = emptyMap(),
+    block: HttpRequestBuilder.() -> Unit = {},
+) = withContext(Dispatchers.Default) {
+    try {
+        Log.info("HttpClient", "GET $path")
+        val response = request(path) {
+            method = HttpMethod.Get
+            params.forEach { (key, value) -> query(key to value) }
+            block(this)
+        }
+        Log.info("HttpClient", "Response status: ${response.status.value}")
+        Result.success(
+            response.bodyAsText().ifBlank {
+                "Backend is reachable. Status ${response.status.value}."
+            },
+        )
+    } catch (e: Exception) {
+        Log.error("HttpClient", e, message = "Failure '${e.message}' on path '$path'")
+        Result.failure(e.resolveToFailure())
+    }
+}
 
 internal suspend inline fun <reified Response : Any> HttpClient.option(
     path: String,

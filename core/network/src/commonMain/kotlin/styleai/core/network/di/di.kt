@@ -11,6 +11,7 @@ import styleai.core.network.StyleAiRemoteApi
 import styleai.core.network.StyleAiRemoteApiImpl
 import styleai.core.network.baseHttpClient
 import styleai.core.network.buildAuthHttpClient
+import styleai.core.network.buildNoAuthHttpClient
 
 @Suppress("ConstPropertyName")
 internal object Named {
@@ -30,15 +31,19 @@ fun networkModule(): Module = module {
     single(named(Named.HttpClient.auth)) {
         buildAuthHttpClient(get<HttpClient>(named(Named.HttpClient.base)), get<DataStore>())
     }
+    single(named(Named.HttpClient.noAuth)) {
+        buildNoAuthHttpClient(get<HttpClient>(named(Named.HttpClient.base)))
+    }
 
     single<StyleAiRemoteApi> {
-        StyleAiRemoteApiImpl(get<HttpClient>(named(Named.HttpClient.auth)))
+        StyleAiRemoteApiImpl(
+            authHttpClient = get<HttpClient>(named(Named.HttpClient.auth)),
+            noAuthHttpClient = get<HttpClient>(named(Named.HttpClient.noAuth)),
+        )
     }
 
     singleOf(::BearerTokenRefresher)
 }
 
 internal expect fun platformNetworkModule(): Module
-
-
 

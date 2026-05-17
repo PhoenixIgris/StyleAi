@@ -22,7 +22,7 @@ sealed class StyleUiState {
 
     @Serializable
     data class RecommendationResult(
-        val recommendation: StyleRecommendation,
+        val recommendation: StyleResponse,
     ) : StyleUiState()
 
     @Serializable
