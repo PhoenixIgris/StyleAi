@@ -1,0 +1,52 @@
+{
+  "app": "StyleAI",
+  "format": "SVG",
+  "colors": {
+    "cream": "#FFF7EE",
+    "card": "#FFFDF8",
+    "blush_pink": "#F7D6DA",
+    "soft_rose": "#E7A09A",
+    "light_beige": "#F5EDE3",
+    "beige": "#F1E5D6",
+    "warm_brown": "#6B4A3A",
+    "muted_gold": "#E0B26B",
+    "tan": "#D8B88D",
+    "deep_brown": "#4A2F25"
+  },
+  "folders": [
+    "icons",
+    "illustrations",
+    "decorative",
+    "ui_tokens",
+    "docs"
+  ],
+  "assets": [
+    "decorative/deco_soft_blobs.svg",
+    "decorative/deco_sparkles.svg",
+    "icons/ic_accessories_earrings.svg",
+    "icons/ic_ai_sparkle.svg",
+    "icons/ic_body_measurement.svg",
+    "icons/ic_budget_price_tag.svg",
+    "icons/ic_color_palette.svg",
+    "icons/ic_date_heart.svg",
+    "icons/ic_edit_pencil.svg",
+    "icons/ic_face_shape.svg",
+    "icons/ic_generate_refresh_sparkle.svg",
+    "icons/ic_handbag.svg",
+    "icons/ic_interview_person.svg",
+    "icons/ic_magic_wand.svg",
+    "icons/ic_occasion_calendar_star.svg",
+    "icons/ic_outfit_hanger.svg",
+    "icons/ic_party_discoball.svg",
+    "icons/ic_piggy_bank.svg",
+    "icons/ic_questionnaire_checklist.svg",
+    "icons/ic_shoes_footwear.svg",
+    "icons/ic_wedding_ring.svg",
+    "icons/ic_work_briefcase.svg",
+    "illustrations/ill_ai_loading_cards.svg",
+    "illustrations/ill_welcome_outfit_scene.svg",
+    "ui_tokens/color_palette_styleai.svg",
+    "ui_tokens/logo_styleai_wordmark.svg"
+  ],
+  "recommended_resource_path": "/Users/sachitashrestha/Me/Sachita/project/StyleAi/core/resources/src/commonMain/composeResources/drawable"
+}

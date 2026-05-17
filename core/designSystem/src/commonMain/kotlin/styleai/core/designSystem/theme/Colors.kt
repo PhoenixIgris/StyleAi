@@ -6,6 +6,17 @@ import styleai.core.common.platform
 
 
 interface StyleAiColors {
+    val creamBackground: Color
+    val blushPink: Color
+    val blushPinkDark: Color
+    val mutedGold: Color
+    val warmBrown: Color
+    val darkBrownText: Color
+    val lightBeige: Color
+    val cardCream: Color
+    val softBorder: Color
+    val errorSoft: Color
+
     val background: Color // Main background color
     val onBackground: Color // Primary text color on background
     val onBackgroundSoft: Color // Secondary text color on background
@@ -47,75 +58,86 @@ interface StyleAiColors {
 }
 
 private object StyleAiLightColors : StyleAiColors {
-    override val background = Color(0xFFF5F5FA) // Soft white with a tint
-    override val onBackground = Color.Black // Primary color for contrast
-    override val onBackgroundSoft = Color(0xFF4E4B66) // Muted text color
-    override val onBackgroundSofter = Color(0xFF6E6A89) // Even softer text color
+    override val creamBackground = Color(0xFFFFF7EE)
+    override val blushPink = Color(0xFFF7D6DA)
+    override val blushPinkDark = Color(0xFFD98C86)
+    override val mutedGold = Color(0xFFE0B26B)
+    override val warmBrown = Color(0xFF6B4A3A)
+    override val darkBrownText = Color(0xFF3B241C)
+    override val lightBeige = Color(0xFFF5EDE3)
+    override val cardCream = Color(0xFFFFFDFC)
+    override val softBorder = Color(0xFFEAD9CF)
+    override val errorSoft = Color(0xFFB85C5C)
 
-    override val altBackground = Color(0xFFFFFFFF) // Pure white alternative
-    override val onAltBackground = Color(0xFF181143)
+    override val background = creamBackground
+    override val onBackground = darkBrownText
+    override val onBackgroundSoft = warmBrown
+    override val onBackgroundSofter = Color(0xFF8A6A5D)
 
-    override val primary = Color(0xFF181143)
-    override val primarySoft = Color(0xFF3B3578)
-    override val primarySofter = Color(0xFF5C5798)
-    override val onPrimary = Color(0xFFFFFFFF)
+    override val altBackground = lightBeige
+    override val onAltBackground = darkBrownText
 
-    override val secondary = Color(0xFF51BA96) // Teal secondary color
-    override val onSecondary = Color(0xFFFFFFFF)
+    override val primary = warmBrown
+    override val primarySoft = blushPinkDark
+    override val primarySofter = blushPink
+    override val onPrimary = cardCream
 
-    override val surface = Color(0xFFFFFFFF)
-    override val onSurface = Color(0xFF181143)
+    override val secondary = mutedGold
+    override val onSecondary = darkBrownText
 
-    override val error = Color(0xFFD32F2F)
-    override val errorBackground = Color(0xFFFFE5E5)
-    override val warning = Color(0xFFF57C00)
-    override val warningBackground = Color(0xFFFFF3CD)
-    override val success = Color(0xFF388E3C)
-    override val successBackground = Color(0xFFE8F5E9)
+    override val surface = cardCream
+    override val onSurface = darkBrownText
 
-    override val edge: Color = Color(0xFF373746)
+    override val error = errorSoft
+    override val errorBackground = Color(0xFFFFECE8)
+    override val warning = mutedGold
+    override val warningBackground = Color(0xFFFFF1D8)
+    override val success = Color(0xFF7F8F5A)
+    override val successBackground = Color(0xFFF3F5E8)
 
-    override val embeddedFrame: Color = Color(0xFF0C0C0D)
+    override val edge: Color = softBorder
+
+    override val embeddedFrame: Color = lightBeige
 
     override val shadow: Color = when (platform()) {
-        Platform.Android -> Color.LightGray
+        Platform.Android -> Color(0x336B4A3A)
         Platform.IOS -> surface
     }
 }
 
 private object StyleAiDarkColors : StyleAiColors {
-    override val background = Color(0xFFF5F5FA) // Soft white with a tint
-    override val onBackground = Color.Black // Primary color for contrast
-    override val onBackgroundSoft = Color(0xFF4E4B66) // Muted text color
-    override val onBackgroundSofter = Color(0xFF6E6A89) // Even softer text color
+    override val creamBackground = StyleAiLightColors.creamBackground
+    override val blushPink = StyleAiLightColors.blushPink
+    override val blushPinkDark = StyleAiLightColors.blushPinkDark
+    override val mutedGold = StyleAiLightColors.mutedGold
+    override val warmBrown = StyleAiLightColors.warmBrown
+    override val darkBrownText = StyleAiLightColors.darkBrownText
+    override val lightBeige = StyleAiLightColors.lightBeige
+    override val cardCream = StyleAiLightColors.cardCream
+    override val softBorder = StyleAiLightColors.softBorder
+    override val errorSoft = StyleAiLightColors.errorSoft
 
-    override val altBackground = Color(0xFFFFFFFF) // Pure white alternative
-    override val onAltBackground = Color(0xFF181143)
-
-    override val primary = Color(0xFF181143)
-    override val primarySoft = Color(0xFF3B3578)
-    override val primarySofter = Color(0xFF5C5798)
-    override val onPrimary = Color(0xFFFFFFFF)
-
-    override val secondary = Color(0xFF51BA96) // Teal secondary color
-    override val onSecondary = Color(0xFFFFFFFF)
-
-    override val surface = Color(0xFFFFFFFF)
-    override val onSurface = Color(0xFF181143)
-
-    override val error = Color(0xFFD32F2F)
-    override val errorBackground = Color(0xFFFFE5E5)
-    override val warning = Color(0xFFF57C00)
-    override val warningBackground = Color(0xFFFFF3CD)
-    override val success = Color(0xFF388E3C)
-    override val successBackground = Color(0xFFE8F5E9)
-
-    override val edge: Color = Color(0xFF373746)
-
-    override val embeddedFrame: Color = Color(0xFF0C0C0D)
-
-    override val shadow: Color = when (platform()) {
-        Platform.Android -> Color.LightGray
-        Platform.IOS -> surface
-    }
+    override val background = StyleAiLightColors.background
+    override val onBackground = StyleAiLightColors.onBackground
+    override val onBackgroundSoft = StyleAiLightColors.onBackgroundSoft
+    override val onBackgroundSofter = StyleAiLightColors.onBackgroundSofter
+    override val altBackground = StyleAiLightColors.altBackground
+    override val onAltBackground = StyleAiLightColors.onAltBackground
+    override val primary = StyleAiLightColors.primary
+    override val primarySoft = StyleAiLightColors.primarySoft
+    override val primarySofter = StyleAiLightColors.primarySofter
+    override val onPrimary = StyleAiLightColors.onPrimary
+    override val secondary = StyleAiLightColors.secondary
+    override val onSecondary = StyleAiLightColors.onSecondary
+    override val surface = StyleAiLightColors.surface
+    override val onSurface = StyleAiLightColors.onSurface
+    override val error = StyleAiLightColors.error
+    override val errorBackground = StyleAiLightColors.errorBackground
+    override val warning = StyleAiLightColors.warning
+    override val warningBackground = StyleAiLightColors.warningBackground
+    override val success = StyleAiLightColors.success
+    override val successBackground = StyleAiLightColors.successBackground
+    override val edge = StyleAiLightColors.edge
+    override val shadow = StyleAiLightColors.shadow
+    override val embeddedFrame = StyleAiLightColors.embeddedFrame
 }

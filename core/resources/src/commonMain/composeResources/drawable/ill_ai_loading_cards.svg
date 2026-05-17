@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" fill="none">
+
+<path d="M158 273c84-109 211-131 314-68" stroke="#E0B26B" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+<path d="M236 112l156-31c19-4 38 9 42 28l40 199c4 19-9 38-28 42l-156 31c-19 4-38-9-42-28l-40-199c-4-19 9-38 28-42z" fill="#F7D6DA" opacity="0.8"/>
+<path d="M203 84h176c20 0 36 16 36 36v206c0 20-16 36-36 36H203c-20 0-36-16-36-36V120c0-20 16-36 36-36z" fill="#FFFDF8" stroke="#F1E5D6" stroke-width="4"/>
+<path d="M240 153c0-35 22-58 50-58s50 23 50 58v93c0 33-100 33-100 0v-93z" stroke="#6B4A3A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M350 130h48v78h-64l16-78z" fill="#F5EDE3" stroke="#6B4A3A" stroke-width="5"/>
+<path d="M235 276h141M247 307h98" stroke="#E0B26B" stroke-width="5" stroke-linecap="round"/>
+<path d="M113 329l89-89" stroke="#E0B26B" stroke-width="8" stroke-linecap="round"/>
+<path d="M207 203l14 39 39 14-39 14-14 39-14-39-39-14 39-14 14-39z" fill="#E0B26B" stroke="#E0B26B" stroke-width="4"/>
+<path d="M466 84l7 21 21 7-21 7-7 21-7-21-21-7 21-7 7-21zM112 111l6 18 18 6-18 6-6 18-6-18-18-6 18-6 6-18zM484 262l5 16 16 5-16 5-5 16-5-16-16-5 16-5 5-16z" fill="#E0B26B"/>
+
+</svg>

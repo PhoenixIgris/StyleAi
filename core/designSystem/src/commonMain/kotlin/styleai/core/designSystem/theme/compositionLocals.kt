@@ -47,6 +47,12 @@ object StyleAiTheme {
 
     val dimens = StyleAiDimens
 
+    val spacing = StyleAiSpacing
+
+    val radius = StyleAiRadius
+
+    val shadows = StyleAiShadows
+
     val shapes = Shapes
 
     val buttonColors = ButtonColors

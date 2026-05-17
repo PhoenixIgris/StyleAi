@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.sp
 
 val FontFamily.Companion.Archivo: FontFamily
     @Composable
-    get() = FontFamily.Serif
+    get() = FontFamily.Default
 
 private val lineHeightStyle = LineHeightStyle(
     alignment = LineHeightStyle.Alignment.Center,
@@ -42,6 +42,19 @@ private fun rememberTextStyle(
 
 @Suppress("PropertyName")
 interface StyleAiTypography {
+    @get:Composable
+    val largeTitle: TextStyle
+    @get:Composable
+    val screenTitle: TextStyle
+    @get:Composable
+    val sectionTitle: TextStyle
+    @get:Composable
+    val bodyText: TextStyle
+    @get:Composable
+    val caption: TextStyle
+    @get:Composable
+    val button: TextStyle
+
     val display: Display
     val heading: Heading
     val body: Body
@@ -158,6 +171,13 @@ interface StyleAiTypography {
 }
 
 internal object StyleAiFontTypography : StyleAiTypography {
+    override val largeTitle @Composable get() = rememberTextStyle(34.sp, FontWeight.SemiBold)
+    override val screenTitle @Composable get() = rememberTextStyle(26.sp, FontWeight.SemiBold)
+    override val sectionTitle @Composable get() = rememberTextStyle(18.sp, FontWeight.SemiBold)
+    override val bodyText @Composable get() = rememberTextStyle(15.sp, FontWeight.Normal)
+    override val caption @Composable get() = rememberTextStyle(12.sp, FontWeight.Normal)
+    override val button @Composable get() = rememberTextStyle(16.sp, FontWeight.Medium)
+
     override val display = object : StyleAiTypography.Display {
         override val SmallRegular @Composable get() = rememberTextStyle(18.sp, FontWeight.Normal)
         override val MediumRegular @Composable get() = rememberTextStyle(24.sp, FontWeight.Normal)

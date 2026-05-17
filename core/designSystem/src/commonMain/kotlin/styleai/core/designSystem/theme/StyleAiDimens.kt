@@ -21,3 +21,12 @@ object StyleAiDimens {
     val size_14 = 56.dp
     val size_16 = 60.dp
 }
+
+object StyleAiSpacing {
+    val xs = 4.dp
+    val sm = 8.dp
+    val md = 16.dp
+    val lg = 24.dp
+    val xl = 32.dp
+    val xxl = 40.dp
+}
