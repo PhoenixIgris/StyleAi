@@ -6,10 +6,12 @@ import styleai.core.data.repository.StadiumRepository
 import styleai.features.camera.CameraScreenViewModel
 import styleai.features.interactive_svg.InteractiveScreenViewModel
 import styleai.features.main.MainHomeScreenContainerScreenViewModel
+import styleai.features.main.style.StyleAiViewModel
 
 internal fun viewModelModule() = module {
     factory { StyleAiUiViewModel() }
     factory { MainHomeScreenContainerScreenViewModel() }
+    factory { StyleAiViewModel(get()) }
     factory { CameraScreenViewModel() }
     factory { InteractiveScreenViewModel(get<StadiumRepository>()) }
 }
